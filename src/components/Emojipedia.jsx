@@ -2,13 +2,13 @@ import React from 'react'
 import emojipedia from '../constants/emojipedia';
 import Card from './Card';
 
-function Detail(emojipedia) {
+function Detail(emojiTerm) {
     return (
-        <Card 
-        key={emojipedia.id}
-        emoji={emojipedia.emoji}
-        name={emojipedia.name}
-        meaning={emojipedia.meaning}
+        <Card
+            key={emojiTerm.id}
+            emoji={emojiTerm.emoji}
+            name={emojiTerm.name}
+            meaning={emojiTerm.meaning}
         />
     );
 }
@@ -16,12 +16,15 @@ function Detail(emojipedia) {
 const Emojipedia = () => {
     return (
         <div>
-          <h1>
-            <span>emojipedia</span>
-          </h1>
+            <h1>
+                <span>emojipedia</span>
+            </h1>
 
-         { emojipedia.map(Detail)};
-          </div>
+                <dl className="dictionary">
+                    {emojipedia.map(Detail)};
+                    </dl>
+        
+        </div >
       );
 }
 
